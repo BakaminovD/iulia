@@ -26,7 +26,7 @@ h2{
 }
 
 h2 span{
-    animation: animate 3s linear infinite;
+    animation: animate 5s linear infinite;
     animation-delay: calc(0.1s * var(--i));
 }
 
