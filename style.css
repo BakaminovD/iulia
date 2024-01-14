@@ -10,24 +10,27 @@
     font-family: 'Bad';
 }
 
-body{
+.birthday{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     min-height: 100vh;
-    background: #111;
+    
+    z-index: 99;
 }
 
-h2{
+.birthday h2{
     display: flex;
     color: transparent;
     font-size: 15vw;
+    z-index: 99;
 }
 
-h2 span{
-    animation: animate 7s linear infinite;
+.birthday h2 span{
+    animation: animate 3s linear infinite;
     animation-delay: calc(0.1s * var(--i));
+    z-index: 99;
 }
 
 @keyframes animate{
@@ -48,6 +51,54 @@ h2 span{
     }
 }
 
+.container{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: #111;
+    z-index: -1;
+}
+
+.boll{
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100vh;
+}
+    
+.boll span{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    color: blue;
+    transform: rotate(90deg);
+    /*border-radius: 50%;
+    background: blue;*/
+    text-shadow: 0 0 10px blue, 0 0 20px blue, 0 0 30px blue, 0 0 40px blue;
+    animation: animateBoll 400s linear infinite;
+    animation-duration: calc(50s / var(--j));
+}
+
+.boll span:nth-child(even){
+    color: palevioletred;
+    text-shadow: 0 0 10px palevioletred, 0 0 20px palevioletred, 0 0 30px palevioletred, 0 0 40px palevioletred;
+}
+
+@keyframes animateBoll{
+    0%{
+        transform: translateY(100vh) scale(0);
+        }
+    100%{
+        transform: translateY(-10vh) scale(1);
+        }
+}
+
+@media (width > 800px) {
+    h2{
+        font-size: 5vw;
+    }
+}
 @media (width > 800px) {
     h2{
         font-size: 5vw;
